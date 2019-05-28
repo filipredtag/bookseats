@@ -1,0 +1,37 @@
+<div class={{#unless infoWindow}}"col-md-6 col-lg-4 mb-4"{{/unless}}>
+	<div class="card hotel">
+		<a href="/hotel-select/{{id}}">
+			<div class="card-img-top">
+				<img src="{{image}}" />
+				{{#if promotion}}
+				<div class="promo-box">
+					{{promotion}}
+				</div>
+				{{/if}}
+			</div>
+			<div class="card-wrapper">
+				<header>
+					<h3 class="card-title text-truncate" title="{{name}}">{{name}}</h3>
+				</header>
+				<article class="card-block">
+					<p class="text-truncate distance-to">{{distanceFrom}} {{proximityUnit}} to {{venue}}</p>
+					<span class="star-rating">
+					{{#stars rating}}{{/stars}}
+					</span>
+					<p class="text-truncate">{{nearby}}</p>
+					{{#hotelAmenities amenityBits}}{{/hotelAmenities}}
+				</article>
+				<div class="price-box">
+					{{#if baseRate}}
+					<div class="was-price">${{baseRate}}</div>
+					{{/if}}
+					<div class="price">C${{rate}}</div>
+					<p>Avg. Nightly rate</p>
+					{{#if roomsAvailable}}
+					<p class="alert">{{roomsAvailable}} rooms available</p>
+					{{/if}}
+				</div>
+			</div>
+		</a>
+	</div>
+</div>

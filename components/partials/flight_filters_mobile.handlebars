@@ -1,0 +1,204 @@
+<div class="col-6 mt-4 text-right float-right">
+    <a href="javascript:;" class="fltftr_resetButton">Reset All Filters</a>
+</div>
+<button type="button" class="mt-3 ml-3 close float-left toggle-filter fltftr_submitM" aria-label="Close">
+  <span aria-hidden="true">&times;</span>
+</button>
+<div class="filter-box">
+
+    <article>
+        <header>
+            <h3>Stops</h3>
+        </header>
+        <ul class="list-unstyled list-grid-one custom-checkmark">
+        {{#each stops}}
+            <li class="mb-2">
+                <input type="checkbox" id="fltftr_stops_{{rating}}M" class="fltftr_stopsCheckboxM" name="stops" value="{{rating}}" />
+                <label class="" for="fltftr_stops_{{rating}}M"> <span></span>
+                    <svg class="icon icon-checkmark"><use xlink:href="/img/symbol-defs.svg#icon-checkmark"></use></svg>
+                    {{#stops rating}}{{/stops}}
+                </label>
+                <span class="float-right-price">C${{price}}</span>
+            </li>
+        {{/each}}
+        </ul>
+    </article>
+
+    <article>
+        <header>
+            <h3>Depart Time</h3>
+        </header>
+        <ul id="fltftr_departureM" class="list-grid-three icon-list filter-btns">
+            <li class="">
+                <label for="fltftr_departureMorningM">
+                    <div class="icon-box btn">
+                        <input type="checkbox" id="fltftr_departureMorningM" class="fltftr_departureCheckboxM" name="depart" value="morning" />
+                        <svg class="icon icon-box-icon mr-0"><use xlink:href="/img/symbol-defs.svg#icon-morning"></use></svg>
+                    </div>
+                </label>
+                <p><strong>Morning</strong></p>
+                <p>12a-12p</p>
+            </li>
+            <li class="">
+                <label for="fltftr_departureNoonM">
+                    <div class="icon-box btn">
+                        <input type="checkbox" id="fltftr_departureNoonM" class="fltftr_departureCheckboxM" name="depart" value="noon" />
+                        <svg class="icon icon-box-icon mr-0"><use xlink:href="/img/symbol-defs.svg#icon-noon"></use></svg>
+                    </div>
+                </label>
+                <p><strong>Noon</strong></p>
+                <p>12p-6p</p>
+            </li>
+            <li class="">
+                <label for="fltftr_departureNightM">
+                    <div class="icon-box btn">
+                        <input type="checkbox" id="fltftr_departureNightM" class="fltftr_departureCheckboxM" name="depart" value="night" />
+                        <svg class="icon icon-box-icon mr-0"><use xlink:href="/img/symbol-defs.svg#icon-night"></use></svg>
+                    </div>
+                </label>
+                <p><strong>Night</strong></p>
+                <p>6p-12a</p>
+            </li>
+        </ul>
+    </article>
+
+    <article>
+        <header>
+            <h3>Arrival Time</h3>
+        </header>
+        <ul id="fltftr_arrivalM" class="list-grid-three icon-list filter-btns">
+            <li class="">
+                <label for="fltftr_arrivalMorningM">
+                    <div class="icon-box btn">
+                        <input type="checkbox" id="fltftr_arrivalMorningM" class="fltftr_arrivalCheckboxM" name="arrival" value="morning" />
+                        <svg class="icon icon-box-icon mr-0"><use xlink:href="/img/symbol-defs.svg#icon-morning"></use></svg>
+                    </div>
+                </label>
+                <p><strong>Morning</strong></p>
+                <p>12a-12p</p>
+            </li>
+            <li class="">
+                <label for="fltftr_arrivalNoonM">
+                    <div class="icon-box btn">
+                        <input type="checkbox" id="fltftr_arrivalNoonM" class="fltftr_arrivalCheckboxM" name="arrival" value="noon" />
+                        <svg class="icon icon-box-icon mr-0"><use xlink:href="/img/symbol-defs.svg#icon-noon"></use></svg>
+                    </div>
+                </label>
+                <p><strong>Noon</strong></p>
+                <p>12p-6p</p>
+            </li>
+            <li class="">
+                <label for="fltftr_arrivalNightM">
+                    <div class="icon-box btn">
+                        <input type="checkbox" id="fltftr_arrivalNightM" class="fltftr_arrivalCheckboxM" name="arrival" value="night" />
+                        <svg class="icon icon-box-icon mr-0"><use xlink:href="/img/symbol-defs.svg#icon-night"></use></svg>
+                    </div>
+                </label>
+                <p><strong>Night</strong></p>
+                <p>6p-12a</p>
+            </li>
+        </ul>
+    </article>
+
+    <article>
+        <header>
+            <h3>Price Range</h3>
+        </header>
+        <div id="fltftr_priceRangeM"></div>
+        <div id="fltftr_minPriceM" class="low-head px-l-2">$99</div>
+        <div id="fltftr_maxPriceM" class="high-head">$999</div>
+    </article>
+
+    <article>
+        <header>
+            <h3>Travel Time</h3>
+        </header>
+        <div id="fltftr_travelTimeM"></div>
+        <div id="fltftr_minTimeM" class="low-head px-l-2">1h 30m</div>
+        <div id="fltftr_maxTimeM" class="high-head">18h 55m</div>
+    </article>
+
+    <article>
+        <header>
+            <h3>Class</h3>
+        </header>
+        <ul class="list-unstyled list-grid-one custom-checkmark">
+        {{#each class}}
+            <li class="mb-2">
+                <input type="checkbox" id="fltftr_class_{{@index}}M" class="fltftr_fareClassCheckboxM" name="fareClass" value="{{this}}">
+                <label class="" for="fltftr_class_{{@index}}M"> <span></span>
+                    <svg class="icon icon-checkmark"><use xlink:href="/img/symbol-defs.svg#icon-checkmark"></use></svg>
+                    {{this}}
+                </label>
+            </li>
+        {{/each}}
+        </ul>
+    </article>
+
+    <article>
+        <header>
+            <h3>Airlines</h3>
+        </header>
+        <ul class="list-unstyled list-grid-one custom-checkmark">
+        {{#each carriers}}
+            <li class="mb-2">
+                <input type="checkbox" id="fltftr_carrier_{{code}}M" class="fltftr_carrierCheckboxM" name="carrier" value="{{code}}">
+                <label class="" for="fltftr_carrier_{{code}}M"> <span></span>
+                    <svg class="icon icon-checkmark"><use xlink:href="/img/symbol-defs.svg#icon-checkmark"></use></svg>
+                   {{carrier}}
+                </label>
+                <span class="float-right-price">C${{price}}</span>
+            </li>
+        {{/each}}
+        </ul>
+        {{!-- <a href="#">Show More Airlines</a> --}}
+    </article>
+
+    <article style='padding-bottom:50px;'>
+        <header>
+            <h3>Airports</h3>
+        </header>
+        <h4>Departing from</h4>
+        <ul class="list-unstyled list-grid-one custom-checkmark">
+        {{#each departureAirport}}
+            <li class="mb-2">
+                <input type="checkbox" id="fltftr_origin_{{code}}M" class="fltftr_originCheckboxM" name="origin" value="{{code}}">
+                <label class="" for="fltftr_origin_{{code}}M"> <span></span>
+                    <svg class="icon icon-checkmark"><use xlink:href="/img/symbol-defs.svg#icon-checkmark"></use></svg>
+                   {{airport}}
+                </label>
+                <span class="float-right-price">C${{price}}</span>
+            </li>
+        {{/each}}
+        </ul>
+
+        <h4>Arriving at</h4>
+        <ul class="list-unstyled list-grid-one custom-checkmark">
+        {{#each destinationAirport}}
+            <li class="mb-2">
+                <input type="checkbox" id="fltftr_destination_{{code}}M" class="fltftr_destinationCheckboxM" name="destination" value="{{code}}">
+                <label class="" for="fltftr_destination_{{code}}M"> <span></span>
+                    <svg class="icon icon-checkmark"><use xlink:href="/img/symbol-defs.svg#icon-checkmark"></use></svg>
+                   {{airport}}
+                </label>
+                <span class="float-right-price">C${{price}}</span>
+            </li>
+        {{/each}}
+        </ul>
+
+        <h4>Connecting Airports</h4>
+        <ul class="list-unstyled list-grid-one custom-checkmark">
+        {{#each connectingAirport}}
+            <li class="mb-2">
+                <input type="checkbox" id="fltftr_connector_{{code}}M" class="fltftr_connectorCheckboxM" name="connector" value="{{code}}">
+                <label class="" for="fltftr_connector_{{code}}M"> <span></span>
+                    <svg class="icon icon-checkmark"><use xlink:href="/img/symbol-defs.svg#icon-checkmark"></use></svg>
+                   {{airport}}
+                </label>
+                <span class="float-right-price">C${{price}}</span>
+            </li>
+        {{/each}}
+        </ul>
+        {{!-- <a href="#">Show More Airports</a> --}}
+    </article>
+</div>
